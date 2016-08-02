@@ -1,7 +1,7 @@
 package lamda.Example4.Function;
 
-import java.util.*;
-import java.util.function.*;
+import java.util.List;
+import java.util.function.Function;
 
 /*
  Function is a builltin interface 

@@ -1,6 +1,6 @@
 package lamda.Example3.way1;
 
-import java.util.*;
+import java.util.List;
 
 public class Main {
 

@@ -1,68 +1,48 @@
 package stream.Example4Matches;
 
-import java.util.*;
-import java.util.function.*;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.function.Function;
 
-
-
-public class Person 
-{
+public class Person {
 	private String surName;
 	private int age;
 	private String gender;
 
-	
-	public Person(String sur,int ag)
-	{
-		surName=sur;
-		age=ag;
-		gender="Male";
+	public Person(String sur, int ag) {
+		surName = sur;
+		age = ag;
+		gender = "Male";
 	}
-	
-	
-	
-	public void printName()
-	{
+
+	public void printName() {
 		System.out.println(surName);
 	}
-	
-	
-	
-	
-	
-	public String printCustom(Function <Person, String> f)
-	{
+
+	public String printCustom(Function<Person, String> f) {
 		return f.apply(this);
 	}
-	
 
-	public static List<Person> createShortList()
-	{
+	public static List<Person> createShortList() {
 		List<Person> people = new ArrayList<>();
-		
-		
-		people.add(new Person("z",16));
-		people.add(new Person("x",17));
-		people.add(new Person("c",18));
-		
-		
-		
+
+		people.add(new Person("z", 16));
+		people.add(new Person("x", 17));
+		people.add(new Person("c", 18));
+
 		return people;
 	}
 
-
-	public String getSurName()
-	{
-		return surName;		
+	public String getSurName() {
+		return surName;
 	}
-	public int getAge()
-	{
+
+	public int getAge() {
 		return age;
 	}
-	public String getGender()
-	{
-		return gender;		
+
+	public String getGender() {
+		return gender;
 	}
-	
-	
+
 }
