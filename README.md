@@ -1,14 +1,14 @@
 #Best Practices of Functional Programming in Java 8
 
-##Lamda Expression Examples
+##Lamda Expression Synopsis
 
-Lambda Runnable
+Runnable:
 ```
 Runnable r = () -> System.out.println("Hello world two!");
 r.run();
 ```
 
-Lamda Comparator Functions
+Comparator Functions:
 ```
 List<Person> personList;
 Collections.sort(personList, (Person p1, Person p2) -> p1.getSurName().compareTo(p2.getSurName()));
@@ -47,5 +47,21 @@ List<Person> list;
 list2.forEach(p -> {
 	System.out.println(p.getSurName());
 });
+```
+##Stream Synopsis
+
+Cretion:
+```
+// We can use Stream.of() to create a stream from similar type of data.
+// For example, we can create Stream of integers from a group of int or
+// Integer objects.
+Stream<Integer> stream = Stream.of(1, 2, 3, 4);
+
+// works fine
+stream = Stream.of(new Integer[] { 1, 2, 3, 4 });
+
+// Compile time error, Type mismatch: cannot convert from Stream<int[]>
+// to Stream<Integer>
+// stream1 = Stream.of(new int[]{1,2,3,4});
 ```
 
