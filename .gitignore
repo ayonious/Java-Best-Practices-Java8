@@ -1,9 +1,9 @@
 # These 3 are required if this is not a gradle project (but you want to import the project into eclipse)
 # These are created by eclipse so that it can understand some configurations for this project(for example which is source directory )
-.classpath
-.project
+#.classpath
+#.project
 #This one is needed by eclipse only when you have special configurations setup in eclipse for this project
-.settings/
+#.settings/
 
 
 # this is for mac
