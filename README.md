@@ -67,22 +67,15 @@ stream = Stream.of(new Integer[] { 1, 2, 3, 4 });
 
 Future:
 ```
-private static ExecutorService pool = Executors.newFixedThreadPool(3);
+ExecutorService pool = Executors.newFixedThreadPool(3);
+Future<String> futureTask = getValue("1", "2");
+System.out.println("future done? " + futureTask.isDone()); //task may not be done at this stage
+String result2 = futureTask.get(); //wait till the task is done
 
-public static void main(String[] args) throws InterruptedException, ExecutionException {
-    System.out.println("=== Future Test ===");
+System.out.println("future done? " + futureTask.isDone());
+System.out.print("result: " + result2);
 
-    Future<String> futureTask = getValue("1", "2");
-
-    System.out.println("future done? " + futureTask.isDone()); //task may not be done at this stage
-
-    String result2 = futureTask.get(); //wait till the task is done
-
-    System.out.println("future done? " + futureTask.isDone());
-    System.out.print("result: " + result2);
-}
-
-public static Future<String> getValue(String value1, String value2) {
+public Future<String> getValue(String value1, String value2) {
     return pool.submit(new Callable<String>() {
         @Override
         public String call() throws Exception {
