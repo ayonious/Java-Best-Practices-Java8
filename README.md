@@ -1,20 +1,20 @@
-#Best Practices of Functional Programming in Java 8
+# Best Practices of Functional Programming in Java 8
 
-##Lamda Expression Synopsis
+## Lamda Expression Synopsis
 
-Runnable:
+### Runnable:
 ```
 Runnable r = () -> System.out.println("Hello world two!");
 r.run();
 ```
 
-Comparator Functions:
+### Comparator Functions:
 ```
 List<Person> personList;
 Collections.sort(personList, (Person p1, Person p2) -> p1.getSurName().compareTo(p2.getSurName()));
 ```
 
-Function:
+### Function:
 ```
 public String printCustom(Function<Person, String> f) {
 	return f.apply(this);
@@ -30,7 +30,7 @@ for (Person person : list1) {
 ```
 
 
-Predicate:
+### Predicate:
 ```
 Predicate<Person> westernStyle = p -> (p.getAge() > 16);
 Predicate<Person> easternStyle = p -> (p.getAge() > 17);
@@ -41,16 +41,16 @@ for (Person person : list1) {
 }
 ```
 
-forEach:
+### forEach:
 ```
 List<Person> list;
 list2.forEach(p -> {
 	System.out.println(p.getSurName());
 });
 ```
-##Stream Synopsis
+## Stream Synopsis
 
-Cretion:
+### Cretion:
 ```
 // We can use Stream.of() to create a stream from similar type of data.
 // For example, we can create Stream of integers from a group of int or
@@ -65,7 +65,7 @@ stream = Stream.of(new Integer[] { 1, 2, 3, 4 });
 // stream1 = Stream.of(new int[]{1,2,3,4});
 ```
 
-Future:
+### Future:
 ```
 ExecutorService pool = Executors.newFixedThreadPool(3);
 Future<String> futureTask = getValue("1", "2");
